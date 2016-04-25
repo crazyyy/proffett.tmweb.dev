@@ -1,0 +1,184 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$sprite-ico-home-name: 'sprite-ico-home';
+$sprite-ico-home-x: 211px;
+$sprite-ico-home-y: 117px;
+$sprite-ico-home-offset-x: -211px;
+$sprite-ico-home-offset-y: -117px;
+$sprite-ico-home-width: 26px;
+$sprite-ico-home-height: 26px;
+$sprite-ico-home-total-width: 250px;
+$sprite-ico-home-total-height: 182px;
+$sprite-ico-home-image: '../img/sprite.png';
+$sprite-ico-home: (211px, 117px, -211px, -117px, 26px, 26px, 250px, 182px, '../img/sprite.png', 'sprite-ico-home', );
+$sprite-ico-phone-name: 'sprite-ico-phone';
+$sprite-ico-phone-x: 211px;
+$sprite-ico-phone-y: 143px;
+$sprite-ico-phone-offset-x: -211px;
+$sprite-ico-phone-offset-y: -143px;
+$sprite-ico-phone-width: 25px;
+$sprite-ico-phone-height: 25px;
+$sprite-ico-phone-total-width: 250px;
+$sprite-ico-phone-total-height: 182px;
+$sprite-ico-phone-image: '../img/sprite.png';
+$sprite-ico-phone: (211px, 143px, -211px, -143px, 25px, 25px, 250px, 182px, '../img/sprite.png', 'sprite-ico-phone', );
+$sprite-ico-search-name: 'sprite-ico-search';
+$sprite-ico-search-x: 127px;
+$sprite-ico-search-y: 127px;
+$sprite-ico-search-offset-x: -127px;
+$sprite-ico-search-offset-y: -127px;
+$sprite-ico-search-width: 57px;
+$sprite-ico-search-height: 54px;
+$sprite-ico-search-total-width: 250px;
+$sprite-ico-search-total-height: 182px;
+$sprite-ico-search-image: '../img/sprite.png';
+$sprite-ico-search: (127px, 127px, -127px, -127px, 57px, 54px, 250px, 182px, '../img/sprite.png', 'sprite-ico-search', );
+$sprite-soc-fb-name: 'sprite-soc-fb';
+$sprite-soc-fb-x: 211px;
+$sprite-soc-fb-y: 0px;
+$sprite-soc-fb-offset-x: -211px;
+$sprite-soc-fb-offset-y: 0px;
+$sprite-soc-fb-width: 39px;
+$sprite-soc-fb-height: 39px;
+$sprite-soc-fb-total-width: 250px;
+$sprite-soc-fb-total-height: 182px;
+$sprite-soc-fb-image: '../img/sprite.png';
+$sprite-soc-fb: (211px, 0px, -211px, 0px, 39px, 39px, 250px, 182px, '../img/sprite.png', 'sprite-soc-fb', );
+$sprite-soc-od-name: 'sprite-soc-od';
+$sprite-soc-od-x: 211px;
+$sprite-soc-od-y: 39px;
+$sprite-soc-od-offset-x: -211px;
+$sprite-soc-od-offset-y: -39px;
+$sprite-soc-od-width: 39px;
+$sprite-soc-od-height: 39px;
+$sprite-soc-od-total-width: 250px;
+$sprite-soc-od-total-height: 182px;
+$sprite-soc-od-image: '../img/sprite.png';
+$sprite-soc-od: (211px, 39px, -211px, -39px, 39px, 39px, 250px, 182px, '../img/sprite.png', 'sprite-soc-od', );
+$sprite-soc-vk-name: 'sprite-soc-vk';
+$sprite-soc-vk-x: 211px;
+$sprite-soc-vk-y: 78px;
+$sprite-soc-vk-offset-x: -211px;
+$sprite-soc-vk-offset-y: -78px;
+$sprite-soc-vk-width: 39px;
+$sprite-soc-vk-height: 39px;
+$sprite-soc-vk-total-width: 250px;
+$sprite-soc-vk-total-height: 182px;
+$sprite-soc-vk-image: '../img/sprite.png';
+$sprite-soc-vk: (211px, 78px, -211px, -78px, 39px, 39px, 250px, 182px, '../img/sprite.png', 'sprite-soc-vk', );
+$sprite-widget-href-cake-name: 'sprite-widget-href-cake';
+$sprite-widget-href-cake-x: 0px;
+$sprite-widget-href-cake-y: 0px;
+$sprite-widget-href-cake-offset-x: 0px;
+$sprite-widget-href-cake-offset-y: 0px;
+$sprite-widget-href-cake-width: 122px;
+$sprite-widget-href-cake-height: 127px;
+$sprite-widget-href-cake-total-width: 250px;
+$sprite-widget-href-cake-total-height: 182px;
+$sprite-widget-href-cake-image: '../img/sprite.png';
+$sprite-widget-href-cake: (0px, 0px, 0px, 0px, 122px, 127px, 250px, 182px, '../img/sprite.png', 'sprite-widget-href-cake', );
+$sprite-widget-href-reserved-name: 'sprite-widget-href-reserved';
+$sprite-widget-href-reserved-x: 0px;
+$sprite-widget-href-reserved-y: 127px;
+$sprite-widget-href-reserved-offset-x: 0px;
+$sprite-widget-href-reserved-offset-y: -127px;
+$sprite-widget-href-reserved-width: 127px;
+$sprite-widget-href-reserved-height: 55px;
+$sprite-widget-href-reserved-total-width: 250px;
+$sprite-widget-href-reserved-total-height: 182px;
+$sprite-widget-href-reserved-image: '../img/sprite.png';
+$sprite-widget-href-reserved: (0px, 127px, 0px, -127px, 127px, 55px, 250px, 182px, '../img/sprite.png', 'sprite-widget-href-reserved', );
+$sprite-widget-news-date-name: 'sprite-widget-news-date';
+$sprite-widget-news-date-x: 122px;
+$sprite-widget-news-date-y: 0px;
+$sprite-widget-news-date-offset-x: -122px;
+$sprite-widget-news-date-offset-y: 0px;
+$sprite-widget-news-date-width: 89px;
+$sprite-widget-news-date-height: 125px;
+$sprite-widget-news-date-total-width: 250px;
+$sprite-widget-news-date-total-height: 182px;
+$sprite-widget-news-date-image: '../img/sprite.png';
+$sprite-widget-news-date: (122px, 0px, -122px, 0px, 89px, 125px, 250px, 182px, '../img/sprite.png', 'sprite-widget-news-date', );
+$spritesheet-width: 250px;
+$spritesheet-height: 182px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($sprite-ico-home, $sprite-ico-phone, $sprite-ico-search, $sprite-soc-fb, $sprite-soc-od, $sprite-soc-vk, $sprite-widget-href-cake, $sprite-widget-href-reserved, $sprite-widget-news-date, );
+$spritesheet: (250px, 182px, '../img/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
