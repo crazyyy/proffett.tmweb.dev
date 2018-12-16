@@ -1,9 +1,9 @@
 /* if work with html set TRUE, else - FALSE */
-var htmlOWp = true,
+var htmlOWp = false,
   // set wordpress template folder
-  wpThemeName = 'wp-framework',
+  wpThemeName = 'wp-flib',
   // and set wordpress domain
-  wpDomain = 'wp-framework.dev';
+  wpDomain = 'flib.dev';
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 8', 'ie_mob >= 10', 'ff >= 20', 'chrome >= 24', 'safari >= 5', 'opera >= 12', 'ios >= 7', 'android >= 2.3', '> 1%', 'last 4 versions', 'bb >= 10'
@@ -130,7 +130,7 @@ gulp.task('scripts:vendor', function() {
     appFiles.vendor_scripts + 'modernizr.js',
     appFiles.vendor_scripts + 'jquery-2.2.3.js',
     appFiles.vendor_scripts + 'jquery.mCustomScrollbar.js',
-    appFiles.vendor_scripts + 'owl.all.carousel-d.js',
+    // appFiles.vendor_scripts + 'owl.all.carousel-d.js',
     // appFiles.vendor_scripts + 'owl.carousel2.thumbs.js',
 
   ])

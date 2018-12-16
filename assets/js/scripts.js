@@ -27,7 +27,8 @@ if (typeof jQuery == 'undefined') {
  */
 (function($){
   $(window).load(function(){
-    $(".article-inner").mCustomScrollbar({
+    if ($('.article-inner').length > 0 ) {
+      $(".article-inner").mCustomScrollbar({
       theme:"3d",
         scrollButtons:{
           enable:true
@@ -38,5 +39,160 @@ if (typeof jQuery == 'undefined') {
           }
         }
       });
+    }
   });
 })(jQuery);
+
+var maxheight = 0;
+$(".menu-category-inner").each(function() {
+  if($(this).height() > maxheight) { maxheight = $(this).height(); }
+});
+$(".menu-category-inner").height(maxheight);
+
+var maxheight = 0;
+$(".chiefs-advice-inner").each(function() {
+  if($(this).height() > maxheight) { maxheight = $(this).height(); }
+});
+$(".chiefs-advice-inner").height(maxheight);
+
+/**
+ * single menu gallery menu
+ */
+$(document).ready(function() {
+  var owlMenuContainer = $('#owl-gallery-menu');
+  owlMenuContainer.owlCarousel({
+    items : 1,
+    slideSpeed : 15000,
+    nav: true,
+    autoplay: true,
+    dots: false,
+    loop: true,
+    responsiveRefreshRate : 200,
+    navText: ['назад','вперед'],
+  });
+});
+/**
+ * sidebar menu toggler
+ */
+var $sidebarNavLink = $('.sidebarnav .menu-item-has-children').children('a');
+$sidebarNavLink.click(function(event) {
+  /* Act on the event */
+  event.preventDefault();
+  $(this).parent().toggleClass('menu-item-opened');
+});
+
+$(document).ready(function() {
+  var owlContainer = $('.home-owl-carousel');
+  owlContainer.owlCarousel({
+    // animateOut: 'fadeOut',
+    // animateIn: 'fadeIn',
+    items:1,
+    // smartSpeed:450,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    loop: true,
+    dotsContainer: '.carousel-custom-dots'
+  });
+  $('.owl-dot').click(function () {
+    owlContainer.trigger('to.owl.carousel', [$(this).index(), 300]);
+  });
+});
+/**
+ * single gallery page
+ */
+
+$(document).ready(function() {
+
+  var sync1 = $("#owl-gallery-main");
+  var sync2 = $("#owl-gallery-thumbs");
+  var slidesPerPage = 4; //globaly define number of elements per page
+  var syncedSecondary = true;
+
+  sync1.owlCarousel({
+    items : 1,
+    slideSpeed : 2000,
+    nav: true,
+    autoplay: true,
+    dots: false,
+    loop: true,
+    responsiveRefreshRate : 200,
+    navText: ['назад','вперед'],
+  }).on('changed.owl.carousel', syncPosition);
+
+  sync2
+    .on('initialized.owl.carousel', function () {
+      sync2.find(".owl-item").eq(0).addClass("current");
+    })
+    .owlCarousel({
+    items : slidesPerPage,
+    dots: false,
+    nav: true,
+    smartSpeed: 200,
+    margin:15,
+    slideSpeed : 2000,
+    slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
+    responsiveRefreshRate : 100,
+    navText: ['назад','вперед'],
+  }).on('changed.owl.carousel', syncPosition2);
+
+  function syncPosition(el) {
+    //if you set loop to false, you have to restore this next line
+    // var current = el.item.index;
+
+    //if you disable loop you have to comment this block
+    var count = el.item.count-1;
+    var current = Math.round(el.item.index - (el.item.count/2) - .5);
+    if(current < 0) {
+      current = count;
+    }
+    if(current > count) {
+      current = 0;
+    }
+    //end block
+
+    sync2
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = sync2.find('.owl-item.active').length - 1;
+    var start = sync2.find('.owl-item.active').first().index();
+    var end = sync2.find('.owl-item.active').last().index();
+
+    if (current > end) {
+      sync2.data('owl.carousel').to(current, 100, true);
+    }
+    if (current < start) {
+      sync2.data('owl.carousel').to(current - onscreen, 100, true);
+    }
+  }
+
+  function syncPosition2(el) {
+    if(syncedSecondary) {
+      var number = el.item.index;
+      sync1.data('owl.carousel').to(number, 100, true);
+    }
+  }
+
+  sync2.on("click", ".owl-item", function(e){
+    e.preventDefault();
+    var number = $(this).index();
+    sync1.data('owl.carousel').to(number, 300, true);
+  });
+});
+
+var $dateLocaleMounth = $('span .m');
+$dateLocaleMounth.each(function(index, el) {
+  var textVerify = $(this).html();
+  if ( textVerify == 'May' ) {
+    $(this).html('Мая')
+  }
+});
+
+
+if ( $('.sidebarnav li').children('ul').length > 0 ) {
+  // nothig
+} else {
+  $('.sidebarnav .current-menu-item').addClass('hide-triangle')
+}
